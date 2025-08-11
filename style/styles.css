@@ -322,9 +322,6 @@
   .hidden {
     display: none;
   }
-  .h-1\/2 {
-    height: calc(1/2 * 100%);
-  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -592,9 +589,6 @@
   .font-\[montserrat\] {
     font-family: montserrat;
   }
-  .font-\[playfair\] {
-    font-family: playfair;
-  }
   .font-\[poppins\] {
     font-family: poppins;
   }
@@ -655,9 +649,6 @@
   .text-gray-200 {
     color: var(--color-gray-200);
   }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
   .text-gray-800 {
     color: var(--color-gray-800);
   }
@@ -673,6 +664,10 @@
   .opacity-10 {
     opacity: 10%;
   }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .shadow-2xs {
     --tw-shadow: 0 1px var(--tw-shadow-color, rgb(0 0 0 / 0.05));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -683,10 +678,6 @@
   }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-xl {
-    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-gray-400 {
@@ -976,11 +967,6 @@
       background-color: #FAF9F6;
     }
   }
-  .dark\:bg-black {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-black);
-    }
-  }
   .dark\:bg-gray-300 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-gray-300);
@@ -1090,11 +1076,6 @@
   background-size: cover;
   background-position: center;
 }
-.bg-no {
-  background-image: url(/images/Annivasary\ \(284\).webp);
-  background-size: cover;
-  background-position: center;
-}
 .bg::before {
   content: '';
   position: absolute;
@@ -1108,6 +1089,31 @@
 .bg > * {
   position: relative;
   z-index: 2;
+}
+.bg-l {
+  position: relative;
+  background-image: url(/images/Annivasary\ \(284\).webp);
+  background-size: cover;
+  background-position: right;
+}
+.bg-l::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.bg-l > * {
+  position: relative;
+  z-index: 2;
+}
+.bg-no {
+  background-image: url(/images/Annivasary\ \(284\).webp);
+  background-size: cover;
+  background-position: center;
 }
 @layer base {
   * {
