@@ -188,7 +188,7 @@
 
   </section>
 
-  <section class=" carousel-pc relative w-full overflow-hidden px-28 py-8 hidden md:flex justify-center">
+  <section class=" carousel-pc relative w-full overflow-hidden px-28 py-8 hidden lg:flex justify-center">
     <!-- Left blur -->
     <div id="left-blur" class="absolute left-[6%] top-0 h-full w-20 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none hidden"></div>
     <!-- Right blur -->
@@ -240,7 +240,7 @@
     </button>
   </section>
 
-  <section class="carousel-mobile w-full px-6 py-8 flex md:hidden flex-col items-center gap-8">
+  <section class="carousel-mobile w-full px-6 py-8 flex lg:hidden flex-col items-center gap-6">
     <!-- Card 1 -->
     <div class="bg-gray-300 w-full max-w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-3xl">
       <h2 class="text-2xl font-bold text-black">Join Us Live</h2>
@@ -276,10 +276,10 @@
     </div>
   </section>
 
-  <section class="flex flex-col justify-center items-center py-10 px-14 gap-20">
+  <section class="flex flex-col justify-center items-center py-10 px-14 gap-15">
 
-    <div class="sub-text flex flex-col gap-12 items-center text-center">
-      <div class="flex flex-col md:flex-row gap-6 text-center">
+    <div class="sub-text flex flex-col gap-8 items-center text-center">
+      <div class="flex flex-col lg:flex-row gap-6 text-center">
 
         <div class="mission flex flex-col items-center gap-2">
           <h1 class="text-2xl md:text-3xl text-black dark:text-white font-bold">Our Mission</h1>
@@ -310,6 +310,77 @@
 
     </div>
 
+  </section>
+
+  <section class="prophetess mt-8 flex flex-col px-6 md:px-20 gap-10">
+
+    <h1 class="text-2xl md:text-3xl text-black dark:text-white text-center font-bold">Meet Our Prophetess</h1>
+
+    <div class="prophetess-info-tab hidden md:flex flex-row items-center gap-8">
+
+      <div class="prophetess-image bg-gray-300 w-[20rem] h-[25rem] rounded-2xl">
+
+      </div>
+
+      <div>
+
+        <p class="name text-2xl text-black dark:text-white font-semibold">Prophetess Favour Nkechi Okata</p>
+
+        <p class="info w-[24rem] text-xl text-[#666666] font-medium">Prophetess Favour Nkechi Okata is a Spiritual Counsellor, Preacher, Song writer and Public Speaker.</p>
+
+      </div>
+
+    </div>
+
+    <div class="prophetess-info-mobile md:hidden flex flex-row bg-gray-300 w-full h-[25rem] px-4 py-4 rounded-2xl items-end justify-center">
+
+      <div>
+
+        <p class="name text-xl text-black dark:text-white font-semibold">Prophetess Favour Nkechi Okata</p>
+
+        <p class="info w-[19rem] text-base text-[#666666] font-medium">Prophetess Favour Nkechi Okata is a Spiritual Counsellor, Preacher, Song writer and Public Speaker.</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="newsletter mt-14 md:mt-20 mb-20 md:mb-36 flex flex-col justify-center items-center gap-5">
+
+    <h1 class="text-2xl md:text-3xl text-black dark:text-white text-center font-bold">Stay Connected.</h1>
+
+    <p class="text-2xl md:text-3xl -mt-7 md:-mt-8 text-[#666666] text-center font-bold">Join the newsletter.</p>
+
+    <form id="newsletter-form" class="flex flex-col justify-center items-center gap-4 md:gap-6">
+      <input type="email" id="email" class="bg-[#d4d4d4] px-4 py-3 w-full rounded-xl" placeholder="Enter your email" required />
+      <button type="submit" class="watch-live bg-[#000000] dark:bg-[#FAF9F6] px-20 md:px-36 py-2 rounded-3xl flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Sign Up</p>
+      </button>
+    </form>
+
+    <script>
+    document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById("email").value;
+
+      const res = await fetch(
+        '${process.env.SUPABASE_URL}/functions/v1/subscribe',
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": process.env.SUPABASE_ANON_KEY
+          },
+          body: JSON.stringify({ email })
+        }
+      );
+
+      const data = await res.json();
+      alert(data.message || data.error);
+    });
+    </script>
+    
   </section>
 
 <script>
