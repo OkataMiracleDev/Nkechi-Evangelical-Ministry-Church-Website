@@ -364,17 +364,11 @@
       
       const email = document.getElementById("email").value;
 
-      const res = await fetch(
-        '/.netlify/functions/subscribe',
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "apikey": process.env.SUPABASE_ANON_KEY
-          },
-          body: JSON.stringify({ email })
-        }
-      );
+      const res = await fetch("https://your-service-name.onrender.com/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
 
       const data = await res.json();
       alert(data.message || data.error);
