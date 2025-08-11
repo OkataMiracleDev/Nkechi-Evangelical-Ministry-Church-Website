@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../style/styles.css" rel="stylesheet">
+  <title>Nkechi Evangelical Ministry</title>
+</head>
+<body class="bg-[#FAF9F6] dark:bg-[#121212] font-[poppins] flex flex-col"> 
+  <nav class="nav-tab bg-[#2E8B8B] dark:bg-[#1B4B4B] hidden md:flex flex-row justify-between items-center px-6 lg:px-8 py-5 lg:py-4 font-[montserrat] font-bold md:text-sm text-base text-white shadow-2xs shadow-gray-500 fixed top-0 left-0 right-0 z-50">
+
+    <a href="#">
+      <div class="logo w-10 h-10 bg-cover" style="background-image: url(/images/logo.png);"></div>
+    </a>
+
+    <div class="nav-links-tab flex flex-row items-center w-fit gap-8">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a href="give.html">Give</a>
+    </div>
+
+    <button class="watch-live bg-[#000000] dark:bg-[#FAF9F6] p-2 rounded-full flex justify-center items-center">
+      <p class="text-white dark:text-[#000000]">Watch Live</p>
+    </button>
+
+  </nav>
+  
+  <nav class="nav-mobile bg-[#2E8B8B] dark:bg-[#1B4B4B] flex md:hidden flex-row justify-between items-center px-4 py-3 font-[montserrat] font-bold text-sm text-white shadow-xl shadow-gray-400 fixed top-0 left-0 right-0 z-50">
+
+    <a href="index.html">
+      <div class="logo w-10 h-10 bg-cover" style="background-image: url(/images/logo.png);"></div>
+    </a>
+
+    <div class="button-nav flex flex-row-reverse justify-center items-center gap-4">
+      <div class="nav-links-mobile relative md:hidden flex flex-row items-center w-fit gap-8">
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-toggle" class="flex items-center px-3 py-2 border rounded text-white border-white">
+          <!-- Icon -->
+          <iconify-icon icon="material-symbols:menu"></iconify-icon>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="mobile-menu" class="absolute right-0 mt-60 w-80 bg-white rounded-lg shadow-lg hidden">
+          <a href="index.html" class="block px-4 py-2 text-gray-800">Home</a>
+          <a href="about.html" class="block px-4 py-2 text-gray-800">About</a>
+          <a href="events.html" class="block px-4 py-2 text-gray-800">Events</a>
+          <a href="contact.html" class="block px-4 py-2 text-gray-800">Contact</a>
+          <a href="give.html" class="block px-4 py-2 text-gray-800">Give</a>
+        </div>
+      </div>
+
+      <button class="watch-live bg-[#000000] dark:bg-[#FAF9F6] p-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Watch Live</p>
+      </button>
+    </div>
+    
+  </nav>
+
+
+  <section class="hero-section bg-[#FFFFFF] dark:bg-[#7A7A7A] font-[poppins] font-bold flex flex-col items-center justify-center gap-8 md:gap-12 z-0">
+
+    <div class="hero bg-gray-300 w-full h-[80vh] flex flex-col justify-center items-center gap-2 md:gap-3">
+      
+      <h1 class="font-[playfair] font-bold text-3xl md:text-5xl w-fit md:w-3/4 text-center">Welcome to <br class="md:hidden"> Nkechi Evangelical Ministry <br>A.K.A Zion City.</h1>
+
+      <p class="font-semibold text-lg md:text-3xl text-[#ABABAB] dark:text-[#FFFFFF]">Join worship, live stream, belong.</p>
+
+      <div class="hero-btns mt-3 md:mt-5 flex flex-row items-center gap-4">
+
+        <button class="watch-live bg-[#000000] dark:bg-[#FAF9F6] px-4 py-2 rounded-full flex justify-center items-center">
+          <p class="text-white dark:text-[#000000]">Watch Live</p>
+        </button>
+
+        <button class="visit-us bg-white dark:bg-[#BDBDBD] px-4 py-2 rounded-full flex justify-center items-center">
+          <p class="text-[#000000]">Visit Us</p>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Ticker-section-->
+    <div class="relative overflow-hidden w-full h-80">
+      <!-- Blur edges -->
+      <div class="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent dark:from-[#7A7A7A] z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent dark:from-[#7A7A7A] z-10 pointer-events-none"></div>
+
+      <!-- Ticker -->
+      <div class="ticker flex gap-4 h-full">
+        <div class="ticker-track flex gap-4">
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+        </div>
+
+        <!-- Duplicate for infinite loop -->
+        <div class="ticker-track flex gap-4">
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+          <div class="ticker-content bg-gray-300 w-72 h-72"></div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+    .ticker {
+      transform: rotate3d(28, 25, -7, 19deg);
+      animation: tickerMove 17s linear infinite; /* 100% speed */
+    }
+    @keyframes tickerMove {
+      from { transform: rotate3d(28, 25, -7, 19deg) translateX(0); }
+      to { transform: rotate3d(28, 25, -7, 19deg) translateX(-50%); }
+    }
+    </style>
+
+    <div class="mb-7 md:mb-10 flex flex-col items-center justify-center gap-0">
+
+      <h1 class="font-bold text-xl md:text-3xl z-10">Find us at our physical location.</h1>
+
+      <p class="bg-gray-200 dark:bg-gray-300 py-2 md:-rotate-z-2 -mt-2 md:-mt-2 text-base md:text-2xl text-[#ABABAB] dark:text-[#ffffff] z-0">Get directions and join our worship.</p>
+
+      <button class="watch-live mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-16 md:px-28 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Get Directions</p>
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="weekly-section w-full h-[80vh] md:h-auto bg-gray-300 md:bg-[#FAF9F6] md:dark:bg-[#121212] flex flex-col items-center justify-between md:justify-center py-8 md:py-8 font-[poppins] gap-4">
+
+    <h1 class="text-2xl md:text-3xl text-black dark:text-white font-bold">I Believe In Miracles Too Tv</h1>
+
+    <div class="weekly-tab w-full hidden md:flex flex-row items-center justify-between px-28 py-8">
+
+      <div class="weekly-info">
+
+        <h2 class="text-xl font-semibold text-black dark:text-white">Weekly Live Service</h2>
+
+        <p class="mt-1.5 text-lg text-[#777777] w-72">Join us for our dynamic weekly gathering. Experience worship, teaching, and community that brings transformation at your <span class="italic text-black dark:text-white">fingertips</span>.</p>
+
+        <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+          <p class="text-white dark:text-[#000000]">Learn More</p>
+        </button>
+
+
+      </div>
+
+      <div class="weekly-image bg-gray-300 w-[40rem] h-[20rem] rounded-2xl">
+
+      </div>
+
+    </div>
+
+    <div class="weekly-mobile flex md:hidden flex-col items-center justify-center">
+      
+      <h2 class="text-xl font-semibold text-black dark:text-white">Weekly Live Service</h2>
+
+      <p class="mt-1.5 text-lg text-[#777777] text-center w-72">Join us for our dynamic weekly gathering. Experience worship, teaching, and community that brings transformation at your <span class="italic text-black dark:text-white">fingertips</span>.</p>
+
+      <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Learn More</p>
+      </button>
+      
+    </div>
+
+    <div class="fodder " style="opacity: 0;">Fodder</div>
+
+  </section>
+
+  <section class=" carousel-pc relative w-full overflow-hidden px-28 py-8 hidden md:flex justify-center">
+    <!-- Left blur -->
+    <div id="left-blur" class="absolute left-[6%] top-0 h-full w-20 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none hidden"></div>
+    <!-- Right blur -->
+    <div id="right-blur" class="absolute right-[6%] top-0 h-full w-20 bg-gradient-to-l from-white dark:from-black to-transparent z-10 pointer-events-none"></div>
+
+    <!-- Carousel track -->
+    <div class="relative w-[1080px] overflow-hidden"> <!-- visible area -->
+        <div id="carousel" class="flex gap-8 transition-transform duration-500 will-change-transform w-max">
+          <!-- Card 1 -->
+          <div class="bg-gray-300 w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-l-3xl">
+            <h2 class="text-2xl font-bold text-black dark:text-white">Join Us Live</h2>
+            <p class="text-gray-500 font-semibold">We can't wait to see you!</p>
+            <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+              <p class="text-white dark:text-[#000000]">Watch Live</p>
+            </button>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-gray-300 w-[420px] h-[510px] flex flex-col justify-end p-6">
+            <h2 class="text-xl font-bold text-black dark:text-white">Latest Sermon</h2>
+            <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+              <p class="text-white dark:text-[#000000]">Play</p>
+            </button>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-gray-300 w-[420px] h-[510px] flex flex-col justify-end p-6">
+            <h2 class="text-xl font-bold text-black dark:text-white">Upcoming Events</h2>
+            <p class="text-gray-500 font-semibold">Come feel the presence of the Holy Spirit!</p>
+            <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+              <p class="text-white dark:text-[#000000]">Discover More</p>
+            </button>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-gray-300 w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-r-3xl">
+            <h2 class="text-xl font-bold text-black dark:text-white">Days Of Activities</h2>
+            <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+              <p class="text-white dark:text-[#000000]">Learn More</p>
+            </button>
+          </div>
+        </div>
+    </div>
+
+    <!-- Nav buttons -->
+    <button id="left-btn" class="absolute left-[7%] top-1/2 -translate-y-1/2 bg-black dark:bg-white text-white dark:text-black p-3 rounded-full shadow-lg hidden z-10">
+      <iconify-icon icon="mingcute:left-fill" class="text-center text-2xl"></iconify-icon>
+    </button>
+    <button id="right-btn" class="absolute right-[7%] top-1/2 -translate-y-1/2 bg-black dark:bg-white text-white dark:text-black p-3 rounded-full shadow-lg z-10">
+      <iconify-icon icon="mingcute:right-fill" class="text-center text-2xl"></iconify-icon>
+
+    </button>
+  </section>
+
+  <section class="carousel-mobile w-full px-6 py-8 flex md:hidden flex-col items-center gap-8">
+    <!-- Card 1 -->
+    <div class="bg-gray-300 w-full max-w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-3xl">
+      <h2 class="text-2xl font-bold text-black">Join Us Live</h2>
+      <p class="text-gray-500 font-semibold">We can't wait to see you!</p>
+      <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Watch Live</p>
+      </button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-gray-300 w-full max-w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-3xl">
+      <h2 class="text-xl font-bold text-black">Latest Sermon</h2>
+      <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Play</p>
+      </button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-gray-300 w-full max-w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-3xl">
+      <h2 class="text-xl font-bold text-black">Upcoming Events</h2>
+      <p class="text-gray-500 font-semibold">Come feel the presence of the Holy Spirit!</p>
+      <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Discover More</p>
+      </button>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-gray-300 w-full max-w-[420px] h-[510px] flex flex-col justify-end p-6 rounded-3xl">
+      <h2 class="text-xl font-bold text-black">Days Of Activities</h2>
+      <button class="learn-more mt-4 bg-[#000000] dark:bg-[#FAF9F6] px-14 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Learn More</p>
+      </button>
+    </div>
+  </section>
+
+  <section class="flex flex-col justify-center items-center py-10 px-14 gap-20">
+
+    <div class="sub-text flex flex-col gap-12 items-center text-center">
+      <div class="flex flex-col md:flex-row gap-6 text-center">
+
+        <div class="mission flex flex-col items-center gap-2">
+          <h1 class="text-2xl md:text-3xl text-black dark:text-white font-bold">Our Mission</h1>
+          <p class="text-base md:text-xl text-[#666666] font-medium w-[20rem] md:w-[35rem]">Our mission is to propagate the gospel of Jesus Christ to the utmost part of the world, in a bid to depopulate hell and to populate heaven.</p>
+        </div>
+
+        <div class="mission flex flex-col items-center gap-2">
+          <h1 class="text-2xl md:text-3xl text-black dark:text-white font-bold">Our Vision</h1>
+          <p class="text-base md:text-xl text-[#666666] font-medium w-[20rem] md:w-[35rem]">Nkechi Evangelical Ministry is commissioned to give hope to the hopeless and help to the helpless.</p>
+        </div>
+
+      </div>
+      <button class="viewmore bg-[#000000] dark:bg-[#FAF9F6] w-fit px-4 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">View More</p>
+      </button>
+
+    </div>
+
+    <div class="donate flex flex-col text-center gap-3">
+
+      <h1 class="text-3xl text-black dark:text-white font-bold">Support the Mission.</h1>
+
+      <p class="text-xl text-[#666666] font-semibold">Give to Nkechi Evangelical Ministry now.</p>
+
+      <button class="watch-live bg-[#000000] dark:bg-[#FAF9F6] px-4 py-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Donate</p>
+      </button>
+
+    </div>
+
+  </section>
+
+<script>
+</script>
+
+
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  <script src="/scripts/index.js"></script>
+</body>
+</html>
