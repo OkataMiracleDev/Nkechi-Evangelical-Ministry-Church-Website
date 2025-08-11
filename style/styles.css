@@ -988,6 +988,14 @@
       color: var(--color-white);
     }
   }
+  .dark\:shadow-black {
+    @media (prefers-color-scheme: dark) {
+      --tw-shadow-color: #000;
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-shadow-color: color-mix(in oklab, var(--color-black) var(--tw-shadow-alpha), transparent);
+      }
+    }
+  }
   .md\:dark\:bg-\[\#121212\] {
     @media (width >= 48rem) {
       @media (prefers-color-scheme: dark) {

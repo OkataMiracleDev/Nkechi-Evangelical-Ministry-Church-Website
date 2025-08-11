@@ -365,7 +365,7 @@
       const email = document.getElementById("email").value;
 
       const res = await fetch(
-        '${process.env.SUPABASE_URL}/functions/v1/subscribe',
+        '/.netlify/functions/subscribe',
         {
           method: "POST",
           headers: {
