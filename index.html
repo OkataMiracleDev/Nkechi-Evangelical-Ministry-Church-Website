@@ -90,7 +90,7 @@
       <div class="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent dark:from-[#7A7A7A] z-10 pointer-events-none"></div>
 
       <!-- Ticker -->
-      <div class="ticker flex gap-4 h-full">
+      <div class="ticker-mobile md:ticker flex gap-4 h-full">
         <div class="ticker-track flex gap-4">
           <div class="ticker-content bg-gray-300 w-72 h-72"></div>
           <div class="ticker-content bg-gray-300 w-72 h-72"></div>
@@ -109,14 +109,28 @@
     </div>
 
     <style>
-    .ticker {
-      transform: rotate3d(28, 25, -7, 19deg);
-      animation: tickerMove 17s linear infinite; /* 100% speed */
-    }
-    @keyframes tickerMove {
-      from { transform: rotate3d(28, 25, -7, 19deg) translateX(0); }
-      to { transform: rotate3d(28, 25, -7, 19deg) translateX(-50%); }
-    }
+      .ticker, .ticker-mobile {
+        display: flex;
+        flex-wrap: nowrap;
+        transform: rotate3d(28, 25, -7, 19deg);
+      }
+
+      .ticker {
+        animation: tickerMove var(--ticker-speed, 17s) linear infinite;
+      }
+
+      .ticker-mobile {
+        animation: tickerMove var(--ticker-speed, 7s) linear infinite;
+      }
+
+      @keyframes tickerMove {
+        from {
+          transform: rotate3d(28, 25, -7, 19deg) translateX(0);
+        }
+        to {
+          transform: rotate3d(28, 25, -7, 19deg) translateX(calc(-1 * var(--ticker-distance, 50%)));
+        }
+      }
     </style>
 
     <div class="mb-7 md:mb-10 flex flex-col items-center justify-center gap-0">

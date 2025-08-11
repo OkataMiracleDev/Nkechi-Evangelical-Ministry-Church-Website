@@ -6,6 +6,23 @@
     menu.classList.toggle("hidden");
   });
 
+ // Ticker
+  document.addEventListener("DOMContentLoaded", () => {
+    const tickerTracks = document.querySelectorAll(".ticker-track");
+
+    if (tickerTracks.length > 0) {
+      // Width of one set of items
+      const trackWidth = tickerTracks[0].scrollWidth;
+      const container = document.querySelector(".ticker-mobile") || document.querySelector(".ticker");
+
+      // Set CSS variable for travel distance
+      container.style.setProperty("--ticker-distance", trackWidth + "px");
+
+      // Optional: Adjust speed so it stays constant (~100px/sec)
+      const speed = trackWidth / 100; // seconds
+      container.style.setProperty("--ticker-speed", speed + "s");
+    }
+  });
 
 // Carousel
 const carousel = document.getElementById('carousel');
