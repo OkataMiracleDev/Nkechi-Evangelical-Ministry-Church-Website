@@ -102,3 +102,30 @@
   background-position: center;
   /* Other styles like height, width, etc. */
 }
+
+
+.bg-border {
+  position: relative; /* This is crucial for the pseudo-element to be positioned correctly */
+  background-image: url(/images/Annivasary\ \(284\).webp);
+  background-size: cover;
+  background-position: center;
+  /* Other styles like height, width, etc. */
+}
+
+
+.bg-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black overlay */
+  border-radius: 2%;
+  z-index: 1; /* Make sure the overlay is above the background image */
+}
+
+.bg-border > * {
+  position: relative;
+  z-index: 2; /* Make sure the content is above the overlay */
+}
