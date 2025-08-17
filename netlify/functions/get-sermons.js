@@ -2,7 +2,7 @@
 const fetch = require('node-fetch');
 
 // This is your YouTube API Key. It's safer here than in the frontend.
-const API_KEY = 'AIzaSyDpqZ10WjmQ7bE4hmIkSShhRsFQGqThO58'; 
+const API_KEY = 'AIzaSyDfQYnnMacN4mdHij1_YdnHHJAjJzueLPI'; 
 // Channel's playlist ID
 const PLAYLIST_ID = 'UU9RmaPmtfVYWJuYig1Q_k3Q';
 // Channel ID
