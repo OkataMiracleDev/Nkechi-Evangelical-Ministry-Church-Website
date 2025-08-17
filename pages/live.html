@@ -6,9 +6,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../style/styles.css" rel="stylesheet">
-  <title>Nkechi Evangelical Ministry</title>
+  <title>Nkechi Evangelical Ministry Sermons</title>
 </head>
-<body class="bg-[#FAF9F6] dark:bg-[#121212] font-[poppins] flex flex-col"> 
+<body class="bg-[#FAF9F6] dark:bg-[#121212] font-[poppins] flex flex-col px-6 md:px-24"> 
   <nav class="nav-tab bg-[#2E8B8B] dark:bg-[#1B4B4B] hidden md:flex flex-row justify-between items-center px-6 lg:px-8 py-5 lg:py-4 font-[montserrat] font-bold md:text-sm text-base text-white shadow-2xs shadow-gray-500 fixed top-0 left-0 right-0 z-50">
 
     <a href="../index.html">
@@ -60,8 +60,129 @@
     
   </nav>
 
+  <section data-animate-up-on-scroll class="hero mt-26 flex flex-col gap-6">
 
+    <h1 class="text-4xl text-center font-bold">Sermons</h1>
 
+    <div class="pinned-sermon flex justify-center items-center">
+
+      <div data-animate-left-on-scroll style="background-image: url(/images/i\ believe\ in\ miracles\ too\ tv.jpg);" class="bg-border md:w-[25rem] md:hover:w-[50rem] h-[20rem] md:h-[25rem] transition-all duration-300 ease-in-out flex flex-col rounded-2xl">
+
+        <div class="flex flex-row h-full justify-end items-end px-4 py-8 gap-4">
+
+          <a href="https://www.youtube.com/watch?v=OxJoqBkcEz0" target="_blank" class="play-btn bg-white p-2 text-3xl rounded-full flex justify-center items-center">
+            <iconify-icon icon="stash:play-solid"></iconify-icon>
+          </a>
+
+          <div class="text flex flex-col text-lg text-white">
+
+            <h1 class="">Pinned Sermon</h1>
+
+            <p class="text-xl font-semibold">COME TO THE BREAD OF LIFE.</p>
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+  </section>
+
+    <!-- New "Live" section with an embedded player -->
+    <section class="live-stream flex flex-col gap-4 mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold">Live Stream</h1>
+        <div id="live-stream-player" class="w-full">
+            <p>Checking for live sermons...</p>
+        </div>
+    </section>
+
+    <section class="all-sermons flex flex-col gap-4">
+        <div class="flex flex-row justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold">All Sermons</h1>
+            <a href="https://www.youtube.com/@nkechievangelicalministry6563/streams" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">View All</a>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <p>Loading recent sermons...</p>
+        </div>
+    </section>
+    
+    <script>
+        async function fetchDataAndDisplay() {
+            const liveStreamPlayerContainer = document.getElementById('live-stream-player');
+            const sermonsContainer = document.querySelector('.all-sermons .grid');
+
+            // URL to your Netlify serverless function
+            const url = '/.netlify/functions/get-sermons';
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                // Display Live Stream
+                if (data.liveVideo.videoId) {
+                    const embeddedVideoHTML = `
+                        <div class="relative w-full rounded-2xl overflow-hidden aspect-video">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/${data.liveVideo.videoId}" 
+                                title="${data.liveVideo.videoTitle}"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h1 class="title text-lg font-semibold break-words line-clamp-2 mt-2">${data.liveVideo.videoTitle}</h1>
+                    `;
+                    liveStreamPlayerContainer.innerHTML = embeddedVideoHTML;
+                } else {
+                    liveStreamPlayerContainer.innerHTML = '<p class="text-gray-500">No live streams found at this time.</p>';
+                }
+
+                // Display All Sermons
+                sermonsContainer.innerHTML = '';
+                if (data.sermons.length === 0) {
+                    sermonsContainer.innerHTML = '<p class="text-gray-500">No recent sermons found.</p>';
+                } else {
+                    data.sermons.forEach(sermon => {
+                        const sermonLink = document.createElement('a');
+                        sermonLink.href = `https://www.youtube.com/watch?v=${sermon.videoId}`;
+                        sermonLink.setAttribute('data-link-type', 'external');
+                        sermonLink.rel = 'noopener noreferrer';
+                        sermonLink.classList.add('sermon-link', 'flex', 'flex-col', 'gap-2', 'rounded-2xl', 'transition-transform', 'duration-300', 'hover:scale-105');
+
+                        const sermonDiv = document.createElement('div');
+                        sermonDiv.classList.add('sermon', 'flex', 'flex-col', 'gap-2');
+
+                        const imgDiv = document.createElement('div');
+                        imgDiv.classList.add('sermon-img', 'bg-gray-200', 'rounded-xl', 'aspect-video', 'w-full');
+                        imgDiv.style.backgroundImage = `url('${sermon.thumbnailUrl}')`;
+
+                        const titleH1 = document.createElement('h1');
+                        titleH1.classList.add('title', 'text-lg', 'font-semibold', 'break-words', 'line-clamp-2');
+                        titleH1.textContent = sermon.title;
+
+                        sermonDiv.appendChild(imgDiv);
+                        sermonDiv.appendChild(titleH1);
+                        sermonLink.appendChild(sermonDiv);
+                        sermonsContainer.appendChild(sermonLink);
+                    });
+                }
+            } catch (error) {
+                console.error("Error fetching data from serverless function:", error);
+                liveStreamPlayerContainer.innerHTML = '<p class="text-red-500">Failed to load content.</p>';
+                sermonsContainer.innerHTML = '<p class="text-red-500">Failed to load content.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchDataAndDisplay);
+    </script>  
+      
   <footer class="bg-[#FFFFFF] dark:bg-[#7A7A7A] text-black py-12">
     <div class="container mx-auto px-4 flex flex-row flex-wrap lg:grid lg:grid-cols-6 gap-8 md:gap-16 lg:gap-8">
       <a href="#">
@@ -108,5 +229,6 @@
   
   <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
   <script src="/scripts/index.js"></script>
+  <script src="/scripts/animate.js"></script>
 </body>
 </html>
