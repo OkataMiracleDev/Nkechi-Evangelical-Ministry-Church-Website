@@ -129,3 +129,11 @@
   position: relative;
   z-index: 2; /* Make sure the content is above the overlay */
 }
+
+        .sermon-img {
+            /* Ensures the background image covers the div */
+            background-size: cover;
+            background-position: center;
+        }
+        /* Make the title link the entire sermon block */
+
