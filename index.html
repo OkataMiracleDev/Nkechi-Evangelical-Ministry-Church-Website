@@ -387,7 +387,7 @@
         const email = document.getElementById("email").value;
 
         try {
-          const res = await fetch("https://nkechi-evangelical-ministry-church.onrender.com/subscribe", {
+          const res = await fetch("https://my-cloudflare-backend.okatamiracle-dev.workers.dev/subscribe", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email })
