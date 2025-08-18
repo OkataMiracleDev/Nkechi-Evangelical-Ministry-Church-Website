@@ -387,7 +387,7 @@
         const email = document.getElementById("email").value;
 
         try {
-          const res = await fetch("https://my-cloudflare-backend.okatamiracle-dev.workers.dev/subscribe", {
+          const res = await fetch("https://my-cloudflare-backend.okatamiracle-dev.workers.dev/api/subscribe", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email })
