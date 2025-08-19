@@ -59,9 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Fetch the public key from your backend endpoint
-            // Change this URL to your live backend endpoint when deployed!
-            const response = await fetch('https://my-cloudflare-backend.okatamiracle-dev.workers.dev/api/paystack-key');
+            // Fetch the public key from your new Netlify Function endpoint
+            const response = await fetch('/.netlify/functions/paystack-key');
             const data = await response.json();
             const paystackPublicKey = data.publicKey;
 
