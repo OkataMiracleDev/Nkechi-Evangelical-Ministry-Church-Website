@@ -67,8 +67,8 @@
           <div class="event-card w-full md:w-[45rem] bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
               <div class="event-image bg-no w-full h-[16rem] md:h-[25rem] bg-cover bg-center" style="background-image: url('/images/events/8th\ Anniversary.jpg');"></div>
               <div class="p-4 flex flex-col items-center">
-                  <button class="rsvp-button bg-[#2E8B8B] hover:bg-[#589f9f] text-white font-bold py-2 px-6 rounded-full transition-colors duration-300" onclick="addToCalendar('NEM 8th Anniversary', 'You are specially invited to NEM`s 8th Anniversary and Mama`s Birthday ', '2025-8-24T12:00:00Z', '2025-8-24T14:00:00Z')">
-                      RSVP Aug 24,2025
+                  <button class="rsvp-button bg-[#2E8B8B] hover:bg-[#589f9f] text-white font-bold py-2 px-6 rounded-full transition-colors duration-300" onclick="generateCalendarLink('NEM 8th Anniversary', 'You are specially invited to NEM`s 8th Anniversary and Mama`s Birthday ', '2025-08-24T12:00:00', '2025-08-24T14:00:00')">
+                      RSVP Aug 24, 2025
                   </button>
               </div>
           </div>
@@ -123,19 +123,15 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
   <script src="/scripts/index.js"></script>
   <script>
-      function addToCalendar(title, description, start, end) {
-          const eventDetails = {
-              title: title,
-              description: description,
-              start: start,
-              end: end
-          };
+      function generateCalendarLink(title, description, start, end) {
+          const calendarUrl = new URL('https://www.addevent.com/calendar/new');
+          calendarUrl.searchParams.set('title', title);
+          calendarUrl.searchParams.set('description', description);
+          calendarUrl.searchParams.set('location', 'Arise and Shine bus-stop Akpajo, east west road, Rivers State.');
+          calendarUrl.searchParams.set('start', start);
+          calendarUrl.searchParams.set('end', end);
 
-          const cal = ics();
-          cal.addEvent(eventDetails.title, eventDetails.description, 'Arise and Shine bus-stop Akpajo, east west road, Rivers State.', eventDetails.start, eventDetails.end);
-
-          // This will trigger the download and open the calendar app
-          cal.download();
+          window.open(calendarUrl.href, '_blank');
       }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ics/2.2.1/ics.min.js"></script>
