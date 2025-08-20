@@ -2,7 +2,7 @@
 const fetch = require('node-fetch');
 
 // ⛔️ Keep this server-side only
-const API_KEY = 'YOUR_KEY_HERE'; 
+const API_KEY = 'AIzaSyDfQYnnMacN4mdHij1_YdnHHJAjJzueLPI'; 
 // Uploads playlist ID (looks like 'UU...' and corresponds to channel uploads)
 const PLAYLIST_ID = 'UU9RmaPmtfVYWJuYig1Q_k3Q';
 const CHANNEL_ID = 'UC9RmaPmtfVYWJuYig1Q_k3Q';
