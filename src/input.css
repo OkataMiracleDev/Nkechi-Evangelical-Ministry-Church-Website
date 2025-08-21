@@ -121,6 +121,14 @@
   z-index: 2; /* Make sure the content is above the overlay */
 }
 
+.bg-no-r {
+  position: relative; /* This is crucial for the pseudo-element to be positioned correctly */
+  background-size: cover;
+  background-position: right;
+  /* Other styles like height, width, etc. */
+}
+
+
 .bg-no {
   background-image: url(/images/Annivasary\ \(284\).webp);
   background-size: cover;
