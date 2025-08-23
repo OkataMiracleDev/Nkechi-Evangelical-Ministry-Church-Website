@@ -10,53 +10,56 @@
     <title>About Nkechi Evangelical Ministry</title>
 </head>
 <body class="bg-[#FAF9F6] dark:bg-[#121212] font-[poppins] flex flex-col"> 
-    <nav class="nav-tab bg-[#2E8B8B] dark:bg-[#1B4B4B] hidden md:flex flex-row justify-between items-center px-6 lg:px-8 py-5 lg:py-4 font-[montserrat] font-bold md:text-sm text-base text-white shadow-2xs shadow-gray-500 fixed top-0 left-0 right-0 z-50">
+  <nav class="nav-tab bg-[#2E8B8B] dark:bg-[#1B4B4B] hidden md:flex flex-row justify-between items-center px-6 lg:px-8 py-5 lg:py-4 font-[montserrat] font-bold md:text-sm text-base text-white shadow-2xs shadow-gray-500 fixed top-0 left-0 right-0 z-50">
 
-        <a href="../index.html">
-            <div class="logo w-10 h-10 bg-cover" style="background-image: url(/images/logo.png);"></div>
-        </a>
+    <a href="../index.html">
+      <div class="logo w-10 h-10 bg-cover" style="background-image: url(/images/logo.png);"></div>
+    </a>
 
-        <div class="nav-links-tab flex flex-row items-center w-fit gap-8">
-            <a class="hover:underline underline-offset-4" href="../index.html">Home</a>
-            <a class="hover:underline underline-offset-4" href="about.html">About</a>
-            <a class="hover:underline underline-offset-4" href="events.html">Events</a>
-            <a class="hover:underline underline-offset-4" href="contact.html">Contact</a>
-            <a class="hover:underline underline-offset-4" href="give.html">Give</a>
-        </div>
+    <div class="nav-links-tab flex flex-row items-center w-fit gap-8">
+      <a class="hover:underline underline-offset-4" href="../index.html">Home</a>
+      <a class="hover:underline underline-offset-4" href="about.html">About</a>
+      <a class="hover:underline underline-offset-4" href="events.html">Events</a>
+      <a class="hover:underline underline-offset-4" href="contact.html">Contact</a>
+      <a class="hover:underline underline-offset-4" href="give.html">Give</a>
+    </div>
 
-        <button class="watch-live bg-[#000000] dark:bg-[#FAF9F6] p-2 rounded-full flex justify-center items-center cursor-pointer hover:shadow-xl shadow-white">
-            <p class="text-white dark:text-[#000000]">Watch Live</p>
+    <a href="live.html" class="watch-live bg-[#000000] dark:bg-[#FAF9F6] p-2 rounded-full flex justify-center items-center cursor-pointer hover:shadow-xl shadow-white">
+      <p class="text-white dark:text-[#000000]">Watch Live</p>
+    </a>
+
+  </nav>
+  
+  <nav class="nav-mobile bg-[#2E8B8B] dark:bg-[#1B4B4B] flex md:hidden flex-row justify-between items-center px-4 py-3 font-[montserrat] font-bold text-sm text-white shadow-2xl shadow-gray-400 dark:shadow-black fixed top-0 left-0 right-0 z-50">
+
+    <a href="../index.html">
+      <div class="logo w-10 h-10 bg-cover" style="background-image: url(/images/logo.png);"></div>
+    </a>
+
+    <div class="button-nav flex flex-row-reverse justify-center items-center gap-4">
+      <div class="nav-links-mobile relative md:hidden flex flex-row items-center w-fit gap-8">
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-toggle" class="flex items-center px-3 py-2 border rounded text-white border-white">
+          <!-- Icon -->
+          <iconify-icon icon="material-symbols:menu"></iconify-icon>
         </button>
 
-    </nav>
-    
-    <nav class="nav-mobile bg-[#2E8B8B] dark:bg-[#1B4B4B] flex md:hidden flex-row justify-between items-center px-4 py-3 font-[montserrat] font-bold text-sm text-white shadow-2xl shadow-gray-400 dark:shadow-black fixed top-0 left-0 right-0 z-50">
-
-        <a href="../index.html">
-            <div class="logo w-10 h-10 bg-cover" style="background-image: url(/images/logo.png);"></div>
-        </a>
-
-        <div class="button-nav flex flex-row-reverse justify-center items-center gap-4">
-            <div class="nav-links-mobile relative md:hidden flex flex-row items-center w-fit gap-8">
-                <button id="mobile-menu-toggle" class="flex items-center px-3 py-2 border rounded text-white border-white">
-                    <iconify-icon icon="material-symbols:menu"></iconify-icon>
-                </button>
-
-                <div id="mobile-menu" class="absolute right-0 mt-60 w-80 bg-white rounded-lg shadow-lg hidden">
-                    <a href="../index.html" class="block px-4 py-2 text-gray-800">Home</a>
-                    <a href="about.html" class="block px-4 py-2 text-gray-800">About</a>
-                    <a href="events.html" class="block px-4 py-2 text-gray-800">Events</a>
-                    <a href="contact.html" class="block px-4 py-2 text-gray-800">Contact</a>
-                    <a href="give.html" class="block px-4 py-2 text-gray-800">Give</a>
-                </div>
-            </div>
-
-            <button class="watch-live bg-[#000000] dark:bg-[#FAF9F6] p-2 rounded-full flex justify-center items-center">
-                <p class="text-white dark:text-[#000000]">Watch Live</p>
-            </button>
+        <!-- Dropdown Menu -->
+        <div id="mobile-menu" class="absolute right-0 mt-60 w-80 bg-white rounded-lg shadow-lg hidden">
+          <a href="../index.html" class="block px-4 py-2 text-gray-800">Home</a>
+          <a href="about.html" class="block px-4 py-2 text-gray-800">About</a>
+          <a href="events.html" class="block px-4 py-2 text-gray-800">Events</a>
+          <a href="contact.html" class="block px-4 py-2 text-gray-800">Contact</a>
+          <a href="give.html" class="block px-4 py-2 text-gray-800">Give</a>
         </div>
-        
-    </nav>
+      </div>
+
+      <a href="live.html" class="watch-live bg-[#000000] dark:bg-[#FAF9F6] p-2 rounded-full flex justify-center items-center">
+        <p class="text-white dark:text-[#000000]">Watch Live</p>
+      </a>
+    </div>
+    
+  </nav>
 
     <section class="hero-section bg-[#FFFFFF] dark:bg-[#7A7A7A] font-[poppins] font-bold flex flex-col items-center justify-center gap-8 md:gap-16 z-0">
 
