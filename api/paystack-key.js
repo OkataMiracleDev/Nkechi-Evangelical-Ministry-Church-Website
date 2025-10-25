@@ -2,6 +2,7 @@
 module.exports = async (req, res) => {
     // Environment variables must be set in Vercel project settings
     const paystackPublicKey = process.env.PAYSTACK_PUBLIC_KEY;
+    
 
     if (!paystackPublicKey) {
         // Use res.status().json() for Vercel

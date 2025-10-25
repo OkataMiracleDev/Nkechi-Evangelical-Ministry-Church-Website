@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
+
 // Vercel Serverless Function format: (req, res)
 module.exports = async (req, res) => {
     // 1. Vercel uses req.method instead of event.httpMethod
