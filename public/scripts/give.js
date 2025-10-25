@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ✅ Directly set your Paystack public key (safe to expose)
+    const paystackPublicKey = "pk_live_a86c8ff6a2577c04e877aac0e21d81fc49f8b38d"; // replace with your actual Paystack public key
+
     // === Amount Selector Logic ===
     const amountInput = document.getElementById('amount');
     const minusBtn = document.getElementById('minus-btn');
@@ -14,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     const dollarOption = `<option value="3002634325_UBA">Dollar Acct - 3002634325 UBA</option>`;
 
-    // Event listeners for amount buttons
+    // === Amount Controls ===
     minusBtn.addEventListener('click', () => {
         let currentValue = parseInt(amountInput.value);
         if (currentValue > 0) {
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         amountInput.value = currentValue + 1;
     });
 
-    // Event listener for currency change
+    // === Currency Switcher ===
     currencySelect.addEventListener('change', (event) => {
         const selectedCurrency = event.target.value;
         accountSelect.innerHTML = ''; // Clear existing options
@@ -38,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial load to set the correct account options
+    // Initialize account options
     currencySelect.dispatchEvent(new Event('change'));
 
-    // === Paystack Integration Logic ===
+    // === Paystack Integration ===
     payNowBtn.addEventListener('click', async (e) => {
         e.preventDefault();
 
@@ -59,15 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Fetch the public key from your new Netlify Function endpoint
-            const response = await fetch('/api/paystack-key');
-            const data = await response.json();
-            const paystackPublicKey = data.publicKey;
-
-            if (!paystackPublicKey) {
-                throw new Error("Public key not received from server.");
-            }
-
+            // ✅ No fetch — use direct Paystack key
             const paystackOptions = {
                 key: paystackPublicKey,
                 email: donorEmail,
@@ -95,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Payment window closed. You can try again to complete your donation.');
                 }
             };
-            
+
             const handler = PaystackPop.setup(paystackOptions);
             handler.openIframe();
 

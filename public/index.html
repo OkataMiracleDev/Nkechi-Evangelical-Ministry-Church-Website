@@ -373,34 +373,42 @@
       </button>
     </form>
 
-    <script>
-        document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
-          e.preventDefault();
-          
-          const email = document.getElementById("email").value;
+<script type="module">
+  import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-          try {
-            // Change the URL to the new Netlify Function endpoint
-            const res = await fetch("/api/subscribe", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email })
-            });
+  // 🔑 Initialize Supabase directly in the browser
+  const SUPABASE_URL = "https://your-supabase-url.supabase.cohttps://rkwbtcogigkrwfgjyaih.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrd2J0Y29naWdrcndmZ2p5YWloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MjE3ODgsImV4cCI6MjA3MDQ5Nzc4OH0.mI8Qc7rvSW0tRTyh2sN6VxOa2ehDIjRjhWUIsPLEW9w";
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-            if (!res.ok) {
-              const errorData = await res.json();
-              alert(errorData.error || "Subscription failed");
-              return;
-            }
+  document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-            const data = await res.json();
-            alert(data.message);
-          } catch (err) {
-            console.error("Fetch error:", err);
-            alert("Network error, please try again later.");
-          }
-        });
-    </script>    
+    const email = document.getElementById("email").value.trim();
+    if (!email) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      // Insert directly into the Supabase 'subscribe' table
+      const { error } = await supabase.from("subscribe").insert([{ email }]);
+
+      if (error) {
+        console.error("Supabase error:", error);
+        alert("Subscription failed: " + error.message);
+        return;
+      }
+
+      alert("🎉 Subscription successful! Thank you for signing up.");
+      document.getElementById("newsletter-form").reset();
+
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      alert("Network error, please try again later.");
+    }
+  });
+</script>
   </section>
 
   <footer class="bg-[#FFFFFF] dark:bg-[#7A7A7A] text-black py-12">
