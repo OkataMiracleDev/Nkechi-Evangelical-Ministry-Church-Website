@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Fetch the public key from your new Netlify Function endpoint
-            const response = await fetch('/.netlify/functions/paystack-key');
+            const response = await fetch('/api/functions/paystack-key');
             const data = await response.json();
             const paystackPublicKey = data.publicKey;
 

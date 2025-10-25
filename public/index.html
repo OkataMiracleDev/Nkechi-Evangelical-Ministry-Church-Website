@@ -381,7 +381,7 @@
 
           try {
             // Change the URL to the new Netlify Function endpoint
-            const res = await fetch("/.api/functions/subscribe", {
+            const res = await fetch("/api/functions/subscribe", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ email })
